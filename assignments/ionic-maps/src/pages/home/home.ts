@@ -52,6 +52,9 @@ export class HomePage {
  
   }
 
+  //add marker button is clicked
+  //drops a marker and then sends the location to
+  //firebase
   addMarker(){
  
     let marker = new google.maps.Marker({
@@ -66,6 +69,8 @@ export class HomePage {
 
     console.log(this.map.getCenter());
 
+    // lat and lng of the maps center(user location)
+    //stored
     var data = {
       point: {
         Lt: this.map.getCenter().lat(),
@@ -91,6 +96,8 @@ export class HomePage {
     })
   }
 
+  //sends location to firebase "locations" collections
+  //tbh this should be done in its own service
   sendToCollection(d){
     return new Promise<any>((resolveDefinition, reject) =>{
       this.firestore.collection('locations').add(d)

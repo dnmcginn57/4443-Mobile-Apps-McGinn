@@ -25682,3 +25682,16 @@ ion-navbar.toolbar {
   width: 100%;
   height: 100%;
 }
+
+page-register .error-message {
+  color: red;
+}
+
+page-register .success-message {
+  color: green;
+}
+
+page-register .submit-button {
+  margin: 0px;
+  margin-top: 20px;
+}
